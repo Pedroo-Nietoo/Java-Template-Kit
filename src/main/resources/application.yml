@@ -1,0 +1,47 @@
+application:
+  name: "Java Template Kit"
+  description: "Template repository for Spring projects"
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: '123'
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  main:
+    banner-mode: "console"
+
+logging:
+  level:
+    org.springframework: info
+
+api-docs:
+  title: ${application.name}
+  description: ${application.description}
+  version: 1.0.0
+  terms-of-service-url: http://localhost:${server.port}/terms-of-service
+  license-name: MIT
+  license-url: https://opensource.org/license/mit
+  contact:
+    name: Pedro Nieto
+    url: https://github.com/Pedroo-Nietoo
+    email: pedronieto.2005@gmail.com
+  servers:
+    - url: http://localhost:8080
+      description: Local enviroment
+    - url: https://staging-api.seuservico.com
+      description: Homolog enviroment
+    - url: https://api.seuservico.com
+      description: Prod enviroment
+
+server:
+  port: 8080
