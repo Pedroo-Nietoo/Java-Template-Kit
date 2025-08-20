@@ -1,0 +1,12 @@
+version: '1.0'
+linter: 'jetbrains/qodana-jvm:2025.1'
+profile:
+  name: qodana.recommended
+include:
+  - name: CheckDependencyLicenses
+exclude:
+  - name: All
+    paths:
+      - src/main/java/com/pedronieto/java_template_kit/adapter/exception
+      - src/main/java/com/pedronieto/java_template_kit/config
+      - src/main/java/com/pedronieto/java_template_kit/domain/exception

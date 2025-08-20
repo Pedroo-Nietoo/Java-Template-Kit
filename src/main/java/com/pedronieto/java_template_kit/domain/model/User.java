@@ -1,7 +1,10 @@
 package com.pedronieto.java_template_kit.domain.model;
 
+import lombok.Getter;
+
 import java.util.Objects;
 
+@Getter
 public class User {
 
     private final String id;
@@ -12,18 +15,6 @@ public class User {
         this.id = id;
         this.name = name;
         this.email = email;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     @Override
