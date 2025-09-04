@@ -127,3 +127,7 @@ docker build -t java-template-kit .
 ```shell
 docker-compose up
 ```
+
+### Grafana and Prometheus
+When running the application via Docker, Grafana can be accessed at `http://localhost:3000` for login.
+Prometheus runs alongside the application and serves as the data source for Grafana dashboards.
