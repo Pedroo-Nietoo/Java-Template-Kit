@@ -1,0 +1,57 @@
+# Application generic configuration
+application:
+  name: "Java-Template-Kit"
+  description: "Template repository for Spring projects"
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  main:
+    banner-mode: "console"
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %replace(%-5level){'INFO','?? INFO','WARN','?? WARN','ERROR','? ERROR'} %cyan(%logger{36}) - %msg%n"
+  level:
+    org.springframework: info
+
+# Swagger configuration
+api-docs:
+  title: ${application.name}
+  description: ${application.description}
+  version: 1.0.0
+  terms-of-service-url: http://localhost:${server.port}/terms-of-service
+  license-name: MIT
+  license-url: https://opensource.org/license/mit
+  contact:
+    name: "Your name"
+    url: "Your contact URL"
+    email: "Your e-mail"
+  servers:
+    - url: http://localhost:8080
+      description: Local enviroment
+    - url: https://staging-api.yourservice.com
+      description: Homolog enviroment
+    - url: https://api.yourservice.com
+      description: Prod enviroment
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
