@@ -59,6 +59,6 @@ class GetUserUseCaseTest {
         });
 
         assertEquals(HttpStatus.NOT_FOUND, exception.getStatus());
-        assertEquals("User not found with id: " + userId, exception.getMessage());
+        assertEquals("User with id " + userId + " was not found.", exception.getMessage());
     }
 }
