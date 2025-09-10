@@ -5,6 +5,7 @@ import com.pedronieto.java_template_kit.domain.exception.BusinessException;
 import com.pedronieto.java_template_kit.domain.mapper.UserMapper;
 import com.pedronieto.java_template_kit.port.input.UserInputPort;
 import com.pedronieto.java_template_kit.port.output.UserOutputPort;
+
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 public class GetUserUseCase implements UserInputPort {
@@ -21,6 +22,6 @@ public class GetUserUseCase implements UserInputPort {
     public UserResponse getUserById(String id) {
         return userOutputPort.findById(id)
                 .map(userMapper::toResponse)
-                .orElseThrow(() -> new BusinessException(NOT_FOUND, "User not found with id: " + id));
+                .orElseThrow(() -> new BusinessException(NOT_FOUND, "User with id " + id + " was not found."));
     }
 }

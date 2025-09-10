@@ -1,10 +1,5 @@
 package com.pedronieto.java_template_kit.domain.model;
 
-import lombok.Getter;
-
-import java.util.Objects;
-
-@Getter
 public class User {
 
     private final String id;
@@ -17,27 +12,15 @@ public class User {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(name, user.name) &&
-                Objects.equals(email, user.email);
+    public String getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, email);
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getEmail() {
+        return email;
     }
 }
