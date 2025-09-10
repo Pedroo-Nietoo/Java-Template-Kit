@@ -1,8 +1,4 @@
 # Application generic configuration
-application:
-  name: "Java-Template-Kit"
-  description: "Template repository for Spring projects"
-
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -24,10 +20,10 @@ logging:
     org.springframework: info
 
 # Swagger configuration
-api-docs:
-  title: ${application.name}
-  description: ${application.description}
-  version: 1.0.0
+swagger:
+  title: ${project.name}
+  description: ${project.description}
+  version: ${project.version}
   terms-of-service-url: http://localhost:${server.port}/terms-of-service
   license-name: MIT
   license-url: https://opensource.org/license/mit
@@ -51,7 +47,7 @@ management:
     web:
       exposure:
         include: "*"
-  metrics:
-    export:
-      prometheus:
+  prometheus:
+    metrics:
+      export:
         enabled: true

@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 public interface SwaggerUserController {
 
     @Operation(
-            summary = "Get a user by ID",
+            summary = "Returns information about a specific user",
             description = "Retrieves the details of a specific user based on their unique identifier."
     )
     @ApiResponses({
@@ -26,7 +26,7 @@ public interface SwaggerUserController {
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "User not found with the provided ID",
+                    description = "User with the provided ID was not found",
                     content = { @Content(schema = @Schema(implementation = ApiErroResponse.class), mediaType = "application/json") }
             ),
             @ApiResponse(

@@ -11,7 +11,7 @@
 	<groupId>com.pedronieto</groupId>
 	<artifactId>java-template-kit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-template-kit</name>
+	<name>Java-Template-Kit</name>
 	<description>Template repository for Spring projects</description>
 	<url/>
 	<licenses>

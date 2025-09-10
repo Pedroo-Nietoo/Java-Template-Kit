@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
 
-@ConfigurationProperties(prefix = "api-docs")
+@ConfigurationProperties(prefix = "swagger")
 public record SwaggerProperties(
         String title,
         String description,
