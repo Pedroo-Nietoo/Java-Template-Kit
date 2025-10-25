@@ -23,6 +23,7 @@ A robust and scalable project template for Java applications with Spring Boot, d
 - [Tests](#tests)
 - [API Documentation (Swagger)](#api-documentation-swagger)
 - [Docker](#docker)
+- [Docker](#spring-actuator)
 
 ---
 
@@ -145,4 +146,5 @@ By default, with this template, the following endpoints are available under /man
 ### Grafana and Prometheus
 When running the application via Docker, Grafana can be accessed at `http://localhost:3000` for login.
 Prometheus runs alongside the application and serves as the data source for Grafana dashboards.
+
 
