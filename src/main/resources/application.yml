@@ -1,4 +1,6 @@
+# =====================================
 # Application generic configuration
+# =====================================
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -19,7 +21,9 @@ logging:
   level:
     org.springframework: info
 
+# =====================================
 # Swagger configuration
+# =====================================
 swagger:
   title: ${project.name}
   description: ${project.description}
@@ -33,21 +37,43 @@ swagger:
     email: "Your e-mail"
   servers:
     - url: http://localhost:8080
-      description: Local enviroment
+      description: Local environment
     - url: https://staging-api.yourservice.com
-      description: Homolog enviroment
+      description: Staging environment
     - url: https://api.yourservice.com
-      description: Prod enviroment
+      description: Production environment
 
 server:
   port: 8080
 
+# =====================================
+# Actuator + Management configuration
+# =====================================
 management:
   endpoints:
     web:
+      base-path: /management
       exposure:
-        include: "*"
+        include: info, health, prometheus
+  info:
+    env:
+      enabled: true
   prometheus:
     metrics:
       export:
         enabled: true
+
+info:
+  app:
+    name: ${project.name}
+    version: ${project.version}
+    description: ${project.description}
+  build:
+    timestamp: ${maven.build.timestamp}
+  environment:
+    profile: ${spring.profiles.active:local}
+    java:
+      version: ${java.version}
+    os:
+      name: ${os.name}
+      arch: ${os.arch}
