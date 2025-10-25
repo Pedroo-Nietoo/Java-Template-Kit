@@ -128,6 +128,21 @@ docker build -t java-template-kit .
 docker-compose up
 ```
 
+## Spring Actuator ⚙️
+Spring Boot Actuator provides ready-to-use monitoring and metrics for your application. It allows you to inspect the internal state, expose metrics, health information, and build details through HTTP endpoints.
+
+#### Key Endpoints
+
+By default, with this template, the following endpoints are available under /management:
+
+| Endpoint                     | Method  | Description                                           |
+|:-----------------------------|:------- |:------------------------------------------------------|
+| `/management/health`         | GET`    | Shows the application health status (UP/DOWN)         |
+| `/management/info`           | GET     | Custom endpoint providing detailed system information, including CPU, memory, JVM, uptime, process ID, platform, architecture, and current timestamp. |
+| `/management/system`         | GET     | Exposes metrics in Prometheus format                  |
+| `/management/prometheus`     | GET     | Exposes metrics in Prometheus format                  |
+
 ### Grafana and Prometheus
 When running the application via Docker, Grafana can be accessed at `http://localhost:3000` for login.
 Prometheus runs alongside the application and serves as the data source for Grafana dashboards.
+
